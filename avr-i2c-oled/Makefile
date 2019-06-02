@@ -84,7 +84,9 @@ LST_PATH = lst
 SRC += main.c 
 SRC += avr-hw-i2c/twimastertimeout.c
 SRC += u8x8-avr-LLdrv/u8x8_avr.c
+SRC += u8x8-xprintf/u8x8_xprintf.c
 SRC += $(wildcard u8g2/csrc/*.c)
+
 
 # List C++ source files here. (C dependencies are automatically generated.)
 CPPSRC = 
@@ -97,13 +99,13 @@ CPPSRC =
 #     Even though the DOS/Win* filesystem matches both .s and .S the same,
 #     it will preserve the spelling of the filenames, and gcc itself does
 #     care about how the name is spelled on its command-line.
-ASRC = 
+ASRC = xprintf_asm/xprintf_asm.S
 
 # List any extra directories to look for include files here.
 #     Each directory must be seperated by a space.
 #     Use forward slashes for directory separators.
 #     For a directory that has spaces, enclose it in quotes.
-EXTRAINCDIRS +=  u8x8-avr-LLdrv  u8g2/csrc
+EXTRAINCDIRS +=  u8x8-avr-LLdrv  u8g2/csrc xprintf_asm u8x8-xprintf
 
 # Optimization level, can be [0, 1, 2, 3, s]. 
 #     0 = turn off optimization. s = optimize for size.
