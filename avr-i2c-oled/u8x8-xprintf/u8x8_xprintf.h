@@ -16,6 +16,17 @@
 	xputs(str); \
 } while(0)
 
+#define XPRINTF_UTF8(u8g2_,x,y,fmt, args...) do { \
+	set_xprintfUTF8((u8g2_),(x),(y)); \
+	xprintf(fmt, ##args); \
+} while(0)
+
+#define XPUTS_UTF8(u8g2_,x,y,str) do { \
+	set_xprintfUTF8((u8g2_),(x),(y)); \
+	xputs(str); \
+} while(0)
+
 void set_xprintf(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y);
+void set_xprintfUTF8(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y);
 
 #endif /* U8X8_XPRINTF_H_ */

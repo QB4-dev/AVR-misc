@@ -30,9 +30,8 @@ static void oled_putc(uint8_t c)
 	}
 }
 
-void set_xprintf(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y)
+static void init_xprintf_common(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y)
 {
-	u8g2_obj->u8x8.next_cb = u8x8_ascii_next;
 	u8x8_utf8_init(u8g2_GetU8x8(u8g2_obj));
 	xprintf_local.ctx = u8g2_obj;
 	xprintf_local.c_x = x;
@@ -40,4 +39,15 @@ void set_xprintf(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y)
 	xdev_out(oled_putc);
 }
 
+void set_xprintf(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y)
+{
+	u8g2_obj->u8x8.next_cb = u8x8_ascii_next;
+	init_xprintf_common(u8g2_obj,x,y);
+}
+
+void set_xprintfUTF8(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y)
+{
+	u8g2_obj->u8x8.next_cb = u8x8_utf8_next;
+	init_xprintf_common(u8g2_obj,x,y);
+}
 
