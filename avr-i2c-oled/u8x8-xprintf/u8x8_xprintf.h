@@ -26,6 +26,7 @@
 	xputs(str); \
 } while(0)
 
+// Don't use functions below directly, use macros defined above
 void set_xprintf(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y);
 void set_xprintfUTF8(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y);
 
