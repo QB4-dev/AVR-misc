@@ -13,5 +13,6 @@ xprintf functions provide basic printf-like expirience to small embedded microco
 - You can easily print as hex, print with leading zeroes or add strings with:<br>
 `XPRINTF(&u8g2,0,22,PSTR("hex %X lz %02d str %s"), x, x%10, "hello");`
 - This xprintf implemantation also supports text rotation
+- Supports UTF8 too
 
 ![ESP8266 connected to router](/avr-i2c-oled/avr-oled.JPG)
