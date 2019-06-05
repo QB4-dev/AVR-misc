@@ -16,3 +16,7 @@ xprintf functions provide basic printf-like expirience to small embedded microco
 - Supports UTF8 too
 
 ![ESP8266 connected to router](/avr-i2c-oled/avr-oled.JPG)
+
+## avr-xprintf-asm
+
+Basic example of [Elm-Chan xprintf library](http://elm-chan.org/fsw/strf/xprintf.html) [AVR asm version] integration on AVR
