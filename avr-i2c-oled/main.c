@@ -65,7 +65,7 @@ int main (void)
 		XPRINTF(&u8g2,0,12,PSTR("xprintf test: dec %d"), x);
 		XPRINTF(&u8g2,0,22,PSTR("hex %X lz %02d str %s"), x, x%10, "hello");
 		u8g2_SetFontDirection(&u8g2, 1);
-		XPUTS(&u8g2,120,15,PSTR("HEY"));
+		XPRINTF(&u8g2,120,15,PSTR("HEY"));
 		u8g2_SendBuffer(&u8g2);
 
 		_delay_ms(100);

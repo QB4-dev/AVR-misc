@@ -5,7 +5,7 @@ static struct {
 	 u8g2_t *ctx;
 } xprintf_local;
 
-static void oled_putc(uint8_t c)
+void oled_putc(uint8_t c)
 {
 	uint16_t e;
 	u8g2_uint_t delta;
@@ -36,7 +36,6 @@ static void init_xprintf_common(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y)
 	xprintf_local.ctx = u8g2_obj;
 	xprintf_local.c_x = x;
 	xprintf_local.c_y = y;
-	xdev_out(oled_putc);
 }
 
 void set_xprintf(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y)
@@ -50,4 +49,3 @@ void set_xprintfUTF8(u8g2_t *u8g2_obj, u8g2_uint_t x, u8g2_uint_t y)
 	u8g2_obj->u8x8.next_cb = u8x8_utf8_next;
 	init_xprintf_common(u8g2_obj,x,y);
 }
-

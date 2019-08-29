@@ -1,6 +1,8 @@
-#include <avr-hw-i2c/i2cmaster.h>
-#include <u8x8-avr-LLdrv/u8x8_avr.h>
 #include <util/delay.h>
+#include <avr-hw-i2c/i2cmaster.h>
+
+#include "u8x8_avr.h"
+
 
 #define SCK_DDR DDRB
 #define SCK_BIT  5
