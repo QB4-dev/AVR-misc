@@ -2,8 +2,8 @@
 #include <util/delay.h>
 #include <avr/pgmspace.h>
 #include <u8g2.h>
-#include <u8x8-avr-LLdrv/u8x8_avr.h>
-#include <u8x8_xprintf.h>
+#include <oled/u8x8-avr-LLdrv/u8x8_avr.h>
+#include <oled/u8x8-xprintf/u8x8_xprintf.h>
 
 #define SSD1306_ADDR  0x78
 
@@ -55,17 +55,17 @@ int main (void)
 
 	while(1){
 		u8g2_ClearBuffer(&u8g2);
-		u8g2_SetFont(&u8g2, u8g2_font_smart_patrol_nbp_tr);
+		u8g2_SetFont(&u8g2, u8g2_font_unifont_t_polish);
 		u8g2_SetFontDirection(&u8g2, 0);
 		u8g2_SetFontRefHeightText(&u8g2);
 		u8g2_SetFontPosTop(&u8g2);
-		u8g2_DrawStr(&u8g2, 0, 0, "u8g2 AVR HW I2C");
+		DISP_PRINTF_UTF8(&u8g2, 0, 0, PSTR("UTF8: żółw"));
 
 		u8g2_SetFont(&u8g2, u8g2_font_5x8_tf);
-		XPRINTF(&u8g2,0,12,PSTR("xprintf test: dec %d"), x);
-		XPRINTF(&u8g2,0,22,PSTR("hex %X lz %02d str %s"), x, x%10, "hello");
+		DISP_PRINTF(&u8g2,0,12,PSTR("xprintf test: dec %d"), x);
+		DISP_PRINTF(&u8g2,0,22,PSTR("hex %X lz %02d str %s"), x, x%10, "hello");
 		u8g2_SetFontDirection(&u8g2, 1);
-		XPRINTF(&u8g2,120,15,PSTR("HEY"));
+		DISP_PRINTF(&u8g2,120,15,PSTR("HEY"));
 		u8g2_SendBuffer(&u8g2);
 
 		_delay_ms(100);

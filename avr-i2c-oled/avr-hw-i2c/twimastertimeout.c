@@ -11,10 +11,11 @@
 * Target:   any AVR device with hardware TWI 
 * Usage:    API compatible with I2C Software Library i2cmaster.h
 **************************************************************************/
-#include <avr-hw-i2c/i2cmaster.h>
+
 #include <inttypes.h>
 #include <compat/twi.h>
 
+#include "i2cmaster.h"
 
 
 /* define CPU frequency in Mhz here if not defined in Makefile */
@@ -23,7 +24,7 @@
 #endif
 
 /* I2C clock in Hz */
-#define SCL_CLOCK  100000L
+#define SCL_CLOCK  400000L
 
 /* I2C timer max delay */
 #define I2C_TIMER_DELAY 0xFF

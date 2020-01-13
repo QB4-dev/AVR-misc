@@ -41,7 +41,7 @@ inline void set_as_input(avr_gpio_t io, uint8_t pull_up) {
 
 inline uint8_t get_input(avr_gpio_t io) {
     volatile uint8_t *pin = io.port - 2;
-    return !(*pin & _BV(io.pin));
+    return (*pin & _BV(io.pin));
 }
 
 #endif /* AVR_GPIO_H_ */

@@ -1,3 +1,6 @@
 [submodule "avr-i2c-oled/u8g2"]
 	path = avr-i2c-oled/u8g2
 	url = https://github.com/olikraus/u8g2
+[submodule "avr-i2c-oled/oled/u8g2"]
+	path = avr-i2c-oled/oled/u8g2
+	url = https://github.com/olikraus/u8g2
