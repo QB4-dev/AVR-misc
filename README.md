@@ -9,7 +9,7 @@ AVR-libc implemantation of u8g2 library with hardware I2C and with [Elm-Chan xpr
 
 xprintf functions provide basic printf-like expirience to small embedded microcontrollers. 
 
-- You can print int variables just using `XPRINTF(&u8g2,0,12,PSTR("xprintf test: dec %d"), x);`
+- You can print int variables just using `DISP_PRINTF(&u8g2,0,12,PSTR("xprintf test: dec %d"), x);`
 - You can easily print as hex, print with leading zeroes or add strings with:<br>
 `DISP_PRINTF(&u8g2,0,22,PSTR("hex %X lz %02d str %s"), x, x%10, "hello");`
 - This xprintf implemantation also supports text rotation
